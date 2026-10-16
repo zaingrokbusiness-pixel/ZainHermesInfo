@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy Policy — Radar Backups</title><style>body{font-family:system-ui,sans-serif;max-width:740px;margin:48px auto;padding:0 24px;line-height:1.65;color:#202124}a{color:#174ea6}h1,h2{line-height:1.25}footer{margin-top:40px;border-top:1px solid #ddd;padding-top:16px}</style></head><body>
+<main>
+<h1>Radar Backups Privacy Policy</h1>
+<p>This policy describes the intended operation of Radar Backups, a private tool operated by Zain for his own research-database backups.</p>
+<h2>Google account access and use</h2>
+<p>The operator authorizes rclone to access his Google Drive account. The backup workflow uses this access to list backup objects, upload encrypted backup files and verification files, download them for integrity and restore checks, and delete older backup sets after a new backup passes verification.</p>
+<p>The underlying Google Drive authorization may allow broader file access than this workflow needs. This policy describes the backup workflow; it does not claim that Google's permission grant is technically restricted to a single backup folder.</p>
+<h2>Storage and security</h2>
+<p>Backups are encrypted by rclone's crypt remote before being stored in Google Drive. Verification temporarily restores downloaded backups in a local scratch database. Authorization tokens, configuration, and encryption secrets are stored on the operator's devices, not on this public website or in its repository.</p>
+<h2>Sharing and other uses</h2>
+<p>The tool is not intended to sell Google user data, use it for advertising, or use it to train AI models. Backup files are transmitted to Google Drive for storage and downloaded to the operator's device for verification or recovery. Google processes the account and stored objects under its own terms and privacy policy.</p>
+<h2>Retention and control</h2>
+<p>Successful backup rotation retains the newest verified backup set locally and in the configured cloud destination. Failed verification can leave older or incomplete sets in place to avoid deleting the last usable backup. Local verification uses temporary files and databases.</p>
+<p>The operator can revoke the app's access through Google Account security settings. Revoking access does not itself delete previously stored backups; those must be removed separately when no longer needed.</p>
+<h2>This informational website</h2>
+<p>These static pages include no application login, analytics scripts, advertising, or tracking cookies. GitHub Pages hosts the site and may process technical request information under GitHub's own privacy policy.</p>
+<h2>Contact</h2>
+<p>For questions, contact <a href="mailto:zaingrok.business@gmail.com">zaingrok.business@gmail.com</a>.</p>
+<p><a href="index.html">Back to Radar Backups</a></p>
+</main></body></html>
