@@ -1,21 +1,33 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy Policy — Radar Backups</title><style>body{font-family:system-ui,sans-serif;max-width:740px;margin:48px auto;padding:0 24px;line-height:1.65;color:#202124}a{color:#174ea6}h1,h2{line-height:1.25}footer{margin-top:40px;border-top:1px solid #ddd;padding-top:16px}</style></head><body>
-<main>
-<h1>Radar Backups Privacy Policy</h1>
-<p>This policy describes the intended operation of Radar Backups, a private tool operated by Zain for his own research-database backups.</p>
-<h2>Google account access and use</h2>
-<p>The operator authorizes rclone to access his Google Drive account. The backup workflow uses this access to list backup objects, upload encrypted backup files and verification files, download them for integrity and restore checks, and delete older backup sets after a new backup passes verification.</p>
-<p>The underlying Google Drive authorization may allow broader file access than this workflow needs. This policy describes the backup workflow; it does not claim that Google's permission grant is technically restricted to a single backup folder.</p>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy Policy — Radar Backups</title><style>body{font-family:system-ui,sans-serif;max-width:740px;margin:48px auto;padding:0 24px;line-height:1.65;color:#202124}a{color:#174ea6}h1,h2{line-height:1.25}footer{margin-top:40px;border-top:1px solid #ddd;padding-top:16px}code{overflow-wrap:anywhere}li{margin:.4em 0}</style></head>
+<body><main>
+<h1>Privacy Policy</h1>
+<p>Last updated: <time datetime="2026-10-18">October 18, 2026</time>.</p>
+<p>Radar Backups is a private application operated by Zain for managing his own Google Drive files and YouTube account. It is not a public sign-up service. This policy describes how the application accesses, uses, stores and shares data. The owner must read and accept it before use.</p>
+<h2>Google Drive data</h2>
+<p>With the owner's authorization, the application accesses file and backup information needed to list, upload, download and verify personal backups, and to remove older backup sets within an approved workflow. The current backup workflow encrypts backup contents before cloud storage. Google Drive permissions may allow broader access than the particular files used by that workflow; they are not necessarily restricted to a single folder.</p>
+<h2>YouTube data</h2>
+<p>The application uses YouTube API Services, including YouTube Data API v3 and YouTube Analytics API. It accesses the authorized owner's channel identifiers, channel information, statistics and non-monetary analytics, such as views, watch time and subscriber changes. This information supports account verification, personal performance review and content planning.</p>
+<p>The current scopes are <code>youtube.force-ssl</code> and <code>yt-analytics.readonly</code>. The first scope technically permits viewing, editing and permanently deleting certain YouTube content; it is not an upload-only permission. The current connector implements read-only checks, not content modification or deletion.</p>
+<p>Future owner-authorized uploads and content management may process video files, thumbnails, titles, descriptions, tags and publication settings. These operations have not yet been implemented or tested. If enabled, publishing publicly would make the selected content and metadata public on YouTube. No monetary analytics scope is requested.</p>
 <h2>Storage and security</h2>
-<p>Backups are encrypted by rclone's crypt remote before being stored in Google Drive. Verification temporarily restores downloaded backups in a local scratch database. Authorization tokens, configuration, and encryption secrets are stored on the operator's devices, not on this public website or in its repository.</p>
-<h2>Sharing and other uses</h2>
-<p>The tool is not intended to sell Google user data, use it for advertising, or use it to train AI models. Backup files are transmitted to Google Drive for storage and downloaded to the operator's device for verification or recovery. Google processes the account and stored objects under its own terms and privacy policy.</p>
-<h2>Retention and control</h2>
-<p>Successful backup rotation retains the newest verified backup set locally and in the configured cloud destination. Failed verification can leave older or incomplete sets in place to avoid deleting the last usable backup. Local verification uses temporary files and databases.</p>
-<p>The operator can revoke the app's access through Google Account security settings. Revoking access does not itself delete previously stored backups; those must be removed separately when no longer needed.</p>
-<h2>This informational website</h2>
-<p>These static pages include no application login, analytics scripts, advertising, or tracking cookies. GitHub Pages hosts the site and may process technical request information under GitHub's own privacy policy.</p>
-<h2>Contact</h2>
-<p>For questions, contact <a href="mailto:zaingrok.business@gmail.com">zaingrok.business@gmail.com</a>.</p>
+<p>Credentials, authorization tokens and operational reports are stored on owner-controlled devices or servers with restricted filesystem access, not on this public website or in its repository. YouTube credentials are kept separately from backup credentials. Google API requests use HTTPS. Restricted file access is not a claim that all local data is encrypted at rest. The application does not collect Google passwords.</p>
+<h2>Processing and sharing</h2>
+<p>Google receives authorization requests, API requests and content sent to its services, under its own terms and <a href="https://policies.google.com/privacy">privacy policy</a>.</p>
+<p>Necessary channel identifiers, statistics and report excerpts may be sent to the owner's AI assistant provider for requested analysis and recommendations, and may appear in the owner's chat service. The current setup uses OpenAI-backed Hermes and Slack; reports have been processed through that assistant workflow. Provider retention depends on the applicable service terms and settings; zero retention is not claimed. Credentials and tokens must not be included in those conversations.</p>
+<p>Google user data is not sold or used for advertising. The owner does not authorize its use to develop, improve or train generalized AI or machine-learning models. Processing report excerpts to generate an answer is distinct from training a model. Any future provider or use requires review against the applicable Google data-use policies. Backup contents are not intentionally shared with AI providers by the backup workflow.</p>
+<h2>Retention and deletion</h2>
+<p>The backup workflow retains the newest verified backup set; failed verification may leave additional files to protect the last usable backup. Revoking access does not automatically delete files already stored in Google Drive.</p>
+<p>YouTube data is retained only as needed for the authorized purpose. Stored channel metadata and statistics must be refreshed or deleted within 30 calendar days. Authorized analytics may be retained longer only where YouTube policies and ongoing owner consent permit. Tokens are retained while the connection remains authorized. Retention review and cleanup are currently manual; automatic cleanup and periodic authorization checks are not implemented.</p>
+<p>To request deletion or withdraw consent, contact <a href="mailto:zaingrok.business@gmail.com">zaingrok.business@gmail.com</a>. The operator will stop the affected processing and delete associated stored YouTube data as soon as possible and within seven calendar days of a deletion request or direct withdrawal of consent. Following revocation through Google Account settings, associated API data must be deleted as soon as possible and within 30 calendar days. Copies in chat or AI-provider systems must also be addressed through the applicable deletion controls; deleting a local report does not erase those copies. These are operator-managed obligations, not automated guarantees.</p>
+<p>Deleting the application's stored data does not delete videos or other content held by YouTube. Use YouTube's own controls to manage that content.</p>
+<h2>Revoking Google access</h2>
+<p>The owner can revoke access through <a href="https://security.google.com/settings/security/permissions">Google Account third-party permissions</a>. Review the affected app grants carefully: Drive and YouTube clients share a Google Cloud project, so revocation should not be assumed to affect only one workflow.</p>
+<h2>This website</h2>
+<p>These static pages contain no login, tracking cookies, analytics scripts, advertising or embedded YouTube player. GitHub Pages hosts the site and may process request information under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+<h2>Terms and contact</h2>
+<p>Use of the YouTube integration is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google's processing is described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<p>For privacy questions, complaints or deletion requests: <a href="mailto:zaingrok.business@gmail.com">zaingrok.business@gmail.com</a>.</p>
 <p><a href="index.html">Back to Radar Backups</a></p>
 </main></body></html>
